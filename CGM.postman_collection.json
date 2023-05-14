@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "fa387cdf-203c-4651-b15f-9b54bd96b2ce",
+		"name": "CGM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "patients",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ilyes\",\r\n    \"surname\":\"zouaoui\",\r\n    \"socialSecurityNumber\":\"12345678A341\",\r\n    \"dateOfBirth\":\"2022-03-10\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/patients",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"patients"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/patients",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"patients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/patients/:id",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"patients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "visits",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"visitDate\": \"2023-05-16T01:47:48.688+0200\",\r\n  \"visitType\": \"AT_HOME\",\r\n  \"visitReason\": \"FIRST_VISIT\",\r\n  \"familyHistory\": \"family history 1\",\r\n  \"patientId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/visits",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"visits"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/visits",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"visits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/visits/:id",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"visits",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by patient id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/visits?patientId=2",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"visits"
+									],
+									"query": [
+										{
+											"key": "patientId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"visitDate\": \"2022-03-10T12:15:50-04:00\",\r\n  \"visitType\": \"AT_HOME\",\r\n  \"visitReason\": \"FIRST_VISIT\",\r\n  \"familyHistory\": \"family history 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ilyesBaseUrl}}:8080/api/public/v1/visits/:id",
+									"host": [
+										"{{ilyesBaseUrl}}"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"public",
+										"v1",
+										"visits",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
