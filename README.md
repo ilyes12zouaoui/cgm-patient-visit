@@ -1,7 +1,7 @@
 # patient-visit-service
 
 ## Main REST API functionalities
-This project provides the following functionalities as REST API:
+This project provides the following functionalities as REST API using java 11 and Quarkus:
 - Create Patient. 
 - Get All Patient
 - Get Patient by id
@@ -22,6 +22,17 @@ This project focuses on Input validation, exception handling and returning meani
 Additionally, a request correlation id will be added to each request logs. To improve traceability and facilitate debugging.
 A postman collection can be found at the root directory of this project named "CGM.postman_collection.json" feel free to import it to facilitate the interaction with the REST API.
 Also, when you start the project locally it is possible to check the openAPI specification on the following link: https://localhost:8080/swagger-ui
+## Running the application in Docker
+You can run your application in Docker by first building a docker image using the Dockerfile provided at the top directory level.
+It will compile the project, run the tests, then start the application. TO build the image you can use the following command. Please make sure docker is installed on your machine:
+```shell script
+docker build -t repo/image-name:tag
+```
+Then to run a docker process from that image you can use the following command.
+```shell script
+docker run -p 8080:8080 repo/image-name:tag
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:

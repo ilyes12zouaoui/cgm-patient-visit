@@ -18,5 +18,5 @@ COPY --from=build --chown=185 /app/target/quarkus-app/quarkus/ /app/deployments/
 
 EXPOSE 8080
 USER 185
-ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
+ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dquarkus.datasource.db-kind=h2 -Dquarkus.datasource.jdbc.url=jdbc:h2:mem:test -Dquarkus.hibernate-orm.database.generation=drop-and-create"
 ENV JAVA_APP_JAR="/app/deployments/quarkus-run.jar"
